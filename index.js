@@ -1,8 +1,16 @@
+const rateLimit = require("express-rate-limit");
 const fetch = require('node-fetch')
 const express = require("express")
 const app = express()
 
-app.listen(3000, () =>{
+const limiter = rateLimit({
+    windowMs: 10 * 60 * 1000,
+    max: 1000
+});
+
+app.use(limiter);
+
+app.listen(3000, () => {
     console.log("API ON | Listening to port 3000")
 })
 app.get('/', async (req, res) => {
