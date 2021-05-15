@@ -19,11 +19,8 @@ const fetch = require('node-fetch')
 fetch('your-site-here').then(res =>{
   if(res.status != 200) return console.log('The status code was not 200, there is probably a problem...')
   res.json().then(json =>{
-    let meme = json.url
+    let Password = json.Password
     // What ever you want do further! 
     })
 })
 ```
-
-
-If you're lucky and heroku did not let me down, you could use https://m3mes-api.herokuapp.com/ 
